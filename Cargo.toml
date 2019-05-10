@@ -10,14 +10,17 @@ keywords = ["serde", "serialization", "no_std"]
 categories = ["encoding"]
 readme = "README.md"
 edition = "2018"
+exclude = ["/sgx/*"]
 
 [features]
-default = ["std"]
-std = ["serde/std"]
+default = ["std", "mesalock_sgx"]
+std = ["serde/mesalock_sgx"]
 alloc = ["serde/alloc"]
+mesalock_sgx = ["sgx_tstd", "std"]
 
 [dependencies]
-serde = { version = "1.0", default-features = false }
+serde = { git = "https://github.com/mesalock-linux/serde-sgx.git" }
+sgx_tstd = { rev = "v1.0.9", git = "https://github.com/baidu/rust-sgx-sdk.git", optional = true }
 
 [dev-dependencies]
 bincode = "1.0"
