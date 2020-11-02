@@ -12,10 +12,10 @@ default = []
 
 [dependencies]
 serde_bytes = { path = "../../.." }
-serde = { git = "https://github.com/mesalock-linux/serde-sgx.git" }
-serde_derive = { git = "https://github.com/mesalock-linux/serde-sgx.git" }
-serde_test = { git = "https://github.com/mesalock-linux/serde-sgx.git" }
-bincode = { git = "https://github.com/mesalock-linux/bincode-sgx.git" }
+serde = { git = "https://github.com/mesalock-linux/serde-sgx" }
+serde_derive = { git = "https://github.com/mesalock-linux/serde-sgx" }
+serde_test = { git = "https://github.com/mesalock-linux/serde-sgx" }
+bincode = { git = "https://github.com/mesalock-linux/bincode-sgx" }
 
 [target.'cfg(not(target_env = "sgx"))'.dependencies]
 sgx_types = { rev = "v1.1.2", git = "https://github.com/apache/teaclave-sgx-sdk.git" }
