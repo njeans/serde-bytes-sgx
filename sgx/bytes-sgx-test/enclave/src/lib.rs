@@ -85,6 +85,7 @@ pub extern "C" fn say_something(some_string: *const u8, some_len: usize) -> sgx_
 
     rsgx_unit_tests!(test_serde::test_bytes,
                      test_serde::test_byte_buf,
+                     test_derive::test,
                      doc_tests::doc_test_bytebuf_main,
                      doc_tests::doc_test_byte_main);
 
